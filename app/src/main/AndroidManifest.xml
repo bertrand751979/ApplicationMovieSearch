@@ -28,7 +28,9 @@
         <activity android:name=".activities.DetailActorMovieHistoryActivity"/>
         <activity android:name=".activities.RegisterActivity"/>
         <activity android:name=".activities.MainActivity"/>
-        <activity android:name=".activities.ActivityForViewPagerActivity"/>
+        <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".activities.ActivityForViewPagerActivity"/>
     </application>
 
 </manifest>
