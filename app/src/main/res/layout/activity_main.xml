@@ -21,11 +21,6 @@
         app:itemTextColor="#050505"
         app:itemBackground="@color/bottomNavButton"
         app:menu="@menu/bottom_navigation_menu"
-        android:layout_alignParentBottom="true"
-
-
-
-
-        />
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

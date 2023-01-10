@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.LoginPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,10 @@
         </activity>
         <activity android:name=".activities.DetailMovieActivity"/>
         <activity android:name=".activities.VideoMovieActivity"/>
-        <activity android:name=".activities.ActorMovieHistory"/>
         <activity android:name=".activities.DetailActorMovieHistoryActivity"/>
-
+        <activity android:name=".activities.RegisterActivity"/>
+        <activity android:name=".activities.MainActivity"/>
+        <activity android:name=".activities.ActivityForViewPagerActivity"/>
     </application>
 
 </manifest>

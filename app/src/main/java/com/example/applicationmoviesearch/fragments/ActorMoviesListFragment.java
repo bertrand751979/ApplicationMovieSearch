@@ -45,7 +45,6 @@ public class ActorMoviesListFragment extends Fragment {
     private ActorAdapter actorAdapter;
     public ActorMoviesListFragmentViewModel actorMoviesListFragmentViewModel;
 
-    //private KnownFor knownFor;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

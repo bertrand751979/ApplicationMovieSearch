@@ -36,7 +36,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DetailMovieActivity extends AppCompatActivity {
-
     private ImageView descPoster;
     private TextView descDetail;
     private ImageView descFavory;

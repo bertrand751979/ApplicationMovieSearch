@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ApplicationMovieSearch</string>
+    <string name="star_desc">Bienvenue sur le site de l encyclopedie du cinéma, vous y retrouverez les meilleurs film de l histoire du cinema...Bonne visite !</string>
+    <string name="person_desc">Vous avez la possibilité de rechecher par titre de film par nom dacteur ou par année de distribution .</string>
+    <string name="end_desc">Maintenant c est a vous de jouer Bonne visite</string>
+
 </resources>

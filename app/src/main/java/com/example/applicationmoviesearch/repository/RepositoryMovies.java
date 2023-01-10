@@ -6,17 +6,19 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 
 import com.example.applicationmoviesearch.ApplicationDatabase;
+import com.example.applicationmoviesearch.ApplicationDatabaseUser;
 import com.example.applicationmoviesearch.models.KnownFor;
 import com.example.applicationmoviesearch.models.Result;
 import com.example.applicationmoviesearch.models.ResultActor;
 import com.example.applicationmoviesearch.models.ResultVideo;
+import com.example.applicationmoviesearch.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
 public class RepositoryMovies {
-
+    public ArrayList<User> myUserList = new ArrayList<>();
     public ArrayList<Result> listMovie = new ArrayList<>();
     public ArrayList<Result> listFavoriteList = new ArrayList<>();
     public ArrayList<ResultVideo> listVideoMovies = new ArrayList<>();
@@ -25,6 +27,7 @@ public class RepositoryMovies {
     public ArrayList<ResultActor> actorMoviesList = new ArrayList<>();
     public ArrayList<KnownFor> listHistoryMovie = new ArrayList<>();
     public String hyperLink = "";
+    public ArrayList<User> newListUser = new ArrayList<>();
 
     private RepositoryMovies(){}
     public static RepositoryMovies INSTANCE = null;
@@ -91,6 +94,22 @@ public class RepositoryMovies {
         this.listHistoryMovie = listHistoryMovie;
     }
 
+    public ArrayList<User> getNewListUser() {
+        return newListUser;
+    }
+
+    public void setNewListUser(ArrayList<User> newListUser) {
+        this.newListUser = newListUser;
+    }
+
+    public ArrayList<User> getMyUserList() {
+        return myUserList;
+    }
+
+    public void setMyUserList(ArrayList<User> myUserList) {
+        this.myUserList = myUserList;
+    }
+
     public LiveData<List<Result>> getFavoriteMovies (Context context){
         return ApplicationDatabase.getInstance(context).getResultDao().getFavMovies();
     }
@@ -129,9 +148,6 @@ public class RepositoryMovies {
         });
     }
 
-
-
-
     public String toCreateVideoHyperlinkById(String variable){
         int pos =0;
         for(ResultVideo resultVideo1 :listVideoMovies) {
@@ -152,4 +168,20 @@ public class RepositoryMovies {
         }
         return result;
     }
+
+    public LiveData<List<User>> getUserList (Context context){
+        return ApplicationDatabaseUser.getInstance(context).getUserDao().getUsers();
+    }
+
+
+    public void addUser(User user, Context context){
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                ApplicationDatabaseUser.getInstance(context).getUserDao().add(user);
+            }
+        });
+    }
+
+
 }

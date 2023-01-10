@@ -18,9 +18,6 @@ public class MySecondAlertDialogFragment extends DialogFragment {
 
     public MySecondAlertDialogFragment(){}
 
-
-
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -50,7 +47,7 @@ public class MySecondAlertDialogFragment extends DialogFragment {
     public static MySecondAlertDialogFragment newInstance(String title){
       MySecondAlertDialogFragment frag = new MySecondAlertDialogFragment();
       Bundle args = new Bundle();
-      args.putString("title",title);
+      //args.putString("title",title);
       frag.setArguments(args);
         return frag;
     }

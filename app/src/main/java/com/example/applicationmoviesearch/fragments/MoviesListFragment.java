@@ -75,6 +75,7 @@ public class MoviesListFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Alert dialog lancer une seul fois
         sharedPreferences = getActivity().getSharedPreferences(MOVIE_EXTRA, 0);
         boolean dialogShown = sharedPreferences.getBoolean("dialogShown", false);
         if (dialogShown!=true) {
@@ -88,8 +89,6 @@ public class MoviesListFragment extends Fragment {
         getActivity().setTitle("Films: ");
         listDisplayMovie= RepositoryMovies.getInstance().getListMovie();
     }
-
-
 
     @Nullable
     @Override
